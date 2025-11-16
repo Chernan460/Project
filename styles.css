@@ -1,5 +1,15 @@
 body{
     margin: 10;
-    background: rgb(175, 174, 174);
+    background: plum;
     text-align: center;
+}
+
+li 
+{
+    margin-bottom: auto;
+    color: aquamarine;
+}
+
+p {
+    text-transform: capitalize;
 }
