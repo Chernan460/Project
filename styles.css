@@ -99,3 +99,7 @@ section {
     width: 200px;
     height: 200px;
 }
+
+.pet p {
+    text-align: center;
+}
