@@ -91,3 +91,9 @@ section {
     font-size: 36px;
     
 }
+
+.pet {
+    position: relative;
+    top: 0;
+    left: 0;
+}
