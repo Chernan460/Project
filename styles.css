@@ -93,13 +93,11 @@ section {
 
 .pet {
     display: block;
-    width: 300px;
-    height: auto;
-    position: relative;
+    margin: 20px auto;
+    max-width: 100%;
 }
 
 ul > p {
     color: #1a1a1a;
-    text-align: left;
-    margin-left: 20px;
+    text-align: center;
 }
