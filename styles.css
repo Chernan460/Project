@@ -5,7 +5,7 @@ body{
     font-size: 18px;
     line-height: 1.6;
     background-color: #3a3939;
-    color: #999999;
+    color: #0a0a0a;
     text-align:center;
 }
 
@@ -93,12 +93,13 @@ section {
 
 .pet {
     display: block;
-    margin: 20px auto;
-    max-width: 300px;
+    width: 300px;
     height: auto;
+    position: relative;
 }
 
-.pet p {
+ul > p {
     color: #1a1a1a;
-    text-align: center;
+    text-align: left;
+    margin-left: 20px;
 }
