@@ -4,7 +4,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     line-height: 1.6;
-    background-color: #459e3dc2;
+    background-color: #9ec6aa;
     color: #0a0a0a;
     text-align:center;
 }
@@ -70,7 +70,7 @@ h3 {
 section {
     margin: 40px 0;
     padding: 20px;
-    background-color: #8abae7;
+    background-color: #ee6a91ab;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgb(4, 221, 41);
 }
@@ -99,5 +99,16 @@ section {
 
 ul > p {
     color: #1a1a1a;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #000;
+    padding: 8px;
     text-align: center;
 }
