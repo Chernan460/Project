@@ -5,29 +5,52 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <main>
     <h1>Schedule your Visit</h1>
 
     <section>
         <h2>Reservation Form</h2>
-            <form id="reservation-form" action="">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required>
-                <label for="time">Time:</label>
-                <input type="time" id="time" name="time" required>
-                <label for="number">Name of Pet:</label>
-                <input type="text" id="number" name="number" required>
-                <label for="message">(Optional)Message:</label>
-                <textarea id="message" name="message" optional></textarea>
+            <form id="reservation-form" class="reservation-form">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <span id="name-error"></span>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="email-error"></span>
+                </div>
+                <div>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <span id="phone-error"></span>
+                </div>
+                <div>
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                    <span id="date-error"></span>
+                </div>
+                <div>
+                    <label for="time">Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div>
+                    <label for="number">Name of Pet:</label>
+                    <input type="text" id="number" name="number" required>
+                </div>
+                <div>
+                    <label for="message">(Optional)Message:</label>
+                    <textarea id="message" name="message" optional></textarea>
+                </div>
                 <button type="submit">Submit</button>
             </form>
+            <div id="success-message">
+                <p>Thank you for your reservation!</p>
+            </div>
+
     </section>
 
     <section>
@@ -153,6 +176,90 @@
     </section>
     </main>
 </body>
+
+<script src="script.js">
+    const form = document.getElementById('reservation-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const number = document.getElementById('number').value;
+        const message = document.getElementById('message').value;
+
+        let isValid = true;
+
+        if (name == '') {
+            isValid = false;
+            document.getElementById('name-error').textContent = 'Please enter your name.';
+        }
+
+        if (email == '') {
+            isValid = false;
+            document.getElementById('email-error').textContent = 'Please enter your email.';
+        }
+
+        if (phone == '') {
+            isValid = false;
+            document.getElementById('phone-error').textContent = 'Please enter your phone number.';
+        }
+
+        if (date == '') {
+            isValid = false;
+            document.getElementById('date-error').textContent = 'Please enter a date.';
+        }
+
+        if (time == '') {
+            isValid = false;
+            document.getElementById('time-error').textContent = 'Please enter a time.';
+        }
+
+        if (number == '') {
+            isValid = false;
+            document.getElementById('number-error').textContent = 'Please enter the name of your pet.';
+        }
+
+        if (message == '') {
+            isValid = false;
+            document.getElementById('message-error').textContent = 'Please enter a message.';
+        }
+
+        if (isValid) {
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+            form.reset();
+        }
+    });
+
+    function showError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.textContent = message;
+        errorElement.style.color = 'red';
+    }
+
+    function clearError() {
+        const errors = document.querySelectorAll('.error');
+        errors.forEach(function(error) {
+            error.textContent = '';
+        });
+    }
+
+    function isValidEmail(email) {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    }
+
+    function isValidPhone(phone) {
+        const phonePattern = /^[\d\s\-\(\)]+$/;
+        return phonePattern.test(phone) && phone.replace(/\D/g, '').length >= 10;
+    }
+
+</script>
+
 <nav aria-label="Main Navigation">
         <ul>
             <li><a href="index.html">Home</a></li>
