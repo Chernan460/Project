@@ -4,7 +4,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     line-height: 1.6;
-    background-color: #3a3939;
+    background-color: #459e3dc2;
     color: #0a0a0a;
     text-align:center;
 }
@@ -70,9 +70,9 @@ h3 {
 section {
     margin: 40px 0;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #8abae7;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgb(4, 221, 41);
 }
 
 .text-logo {
